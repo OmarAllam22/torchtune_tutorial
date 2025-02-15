@@ -20,3 +20,17 @@ This shows why pytorch by default accumulate gradient and you must at the start 
 > * **What it is:** LoRA is a parameter-efficient fine-tuning method that introduces small, trainable low-rank matrices into the model while keeping the original model weights frozen. This allows fine-tuning with significantly fewer parameters.
 > * **Why it’s useful:** It reduces memory and computational requirements, making fine-tuning feasible on modest hardware.    
 > * **How it differs from `gradient accumulation` and `reduced precision training`:** `LoRA` modifies the model architecture to reduce trainable parameters, while the other two techniques optimize the training process itself.
+
+> ### DPO (Direct Preference Optimization)
+> * **`DPO (Direct Preference Optimization)`** is **a method for fine-tuning models to align their outputs with human preferences.**
+> * Traditional fine-tuning methods often rely on **`reinforcement learning from human feedback (RLHF)`**, which involves **training a reward model** and then using it to guide the fine-tuning process. However, RLHF can be complex and computationally expensive.
+> * **DPO simplifies** this process by directly optimizing the model to prefer outputs that align with human preferences, **without needing a separate reward model**.
+>> DPO works by comparing pairs of model outputs and optimizing the model to prefer the output that aligns better with human preferences. Here’s how it works:
+>> 1. **Data Collection:**
+<br> Collect a dataset of paired comparisons, where humans have ranked two model outputs for the same input (e.g., "Output A is better than Output B").
+>> 2. **Loss Function:**
+<br>DPO uses a preference-based loss function to directly optimize the model. The loss function encourages the model to assign higher probabilities to the preferred outputs and lower probabilities to the less preferred ones. The loss function is designed to maximize the likelihood of the preferred outputs while minimizing the likelihood of the less preferred ones.
+>> 3. **Training:**
+<br>The model is fine-tuned using the preference data and the DPO loss function. This aligns the model's outputs with human preferences without requiring a separate reward model.
+
+
