@@ -1,8 +1,7 @@
 # About:
 
-This README file contains concepts from torchtune toturial [here](https://pytorch.org/torchtune/stable/overview.html)
-
-
+This README file contains concepts from torchtune toturial [**HERE**](https://pytorch.org/torchtune/stable/overview.html)
+or [**HERE**](https://pytorch.org/torchtune/stable/index.html#getting-started)
 # Notes:
 
 > ### Gradient Accumulation
@@ -20,6 +19,9 @@ This shows why pytorch by default accumulate gradient and you must at the start 
 > * **What it is:** LoRA is a parameter-efficient fine-tuning method that introduces small, trainable low-rank matrices into the model while keeping the original model weights frozen. This allows fine-tuning with significantly fewer parameters.
 > * **Why it’s useful:** It reduces memory and computational requirements, making fine-tuning feasible on modest hardware.    
 > * **How it differs from `gradient accumulation` and `reduced precision training`:** `LoRA` modifies the model architecture to reduce trainable parameters, while the other two techniques optimize the training process itself.
+> #### **`QLoRA`** is an extension of LoRA that incorporates quantization.
+> * It fine-tunes models using low-rank adaptations while keeping the base model quantized (e.g., 4-bit precision).
+> * **QLoRA further reduces memory and computational requirements compared to LoRA**, making it possible to fine-tune very large models on consumer-grade hardware. <font color='red'>**Quantizaion is not used only for training but inference**</font>. 
 
 > ### DPO (Direct Preference Optimization)
 > * **`DPO (Direct Preference Optimization)`** is **a method for fine-tuning models to align their outputs with human preferences.**
@@ -33,4 +35,10 @@ This shows why pytorch by default accumulate gradient and you must at the start 
 >> 3. **Training:**
 <br>The model is fine-tuned using the preference data and the DPO loss function. This aligns the model's outputs with human preferences without requiring a separate reward model.
 
+> ### PPO (Proximal Policy Optimization)
+> It is different from DPO. <font color='red'>**DPO (Direct Preference Optimization) is not a method in RLHF but PPO is.**</font>
+> * PPO (Proximal Policy Optimization) is a popular reinforcement learning algorithm used to train agents (such as language models) to make decisions by optimizing their policies. It is widely used in tasks like fine-tuning large language models (LLMs) with Reinforcement Learning from Human Feedback (RLHF).
+> * PPO is a reinforcement learning algorithm designed to optimize the behavior of an agent (e.g., a language model) by maximizing a reward signal.
+> * It is called "proximal" because it ensures that updates to the agent's policy are not too large, preventing instability during training.
+> * PPO is a policy gradient method, meaning it directly optimizes the policy (the strategy the agent uses to make decisions) rather than learning a value function
 
