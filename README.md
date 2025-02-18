@@ -42,3 +42,5 @@ This shows why pytorch by default accumulate gradient and you must at the start 
 > * It is called "proximal" because it ensures that updates to the agent's policy are not too large, preventing instability during training.
 > * PPO is a policy gradient method, meaning it directly optimizes the policy (the strategy the agent uses to make decisions) rather than learning a value function
 
+> ### Model Distillation:
+> Knowledge distillation is a technique used to transfer knowledge from a large, complex model (called the teacher) to a smaller, simpler model (called the student). The goal is to improve the student model’s performance by leveraging the teacher’s learned representations, even though the student has fewer parameters and less capacity.
