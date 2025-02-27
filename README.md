@@ -44,3 +44,6 @@ This shows why pytorch by default accumulate gradient and you must at the start 
 
 > ### Model Distillation:
 > Knowledge distillation is a technique used to transfer knowledge from a large, complex model (called the teacher) to a smaller, simpler model (called the student). The goal is to improve the student model’s performance by leveraging the teacher’s learned representations, even though the student has fewer parameters and less capacity.
+
+> ### New Definition of Machine Learning
+> Machine learning is in many ways `the intersection of two disciplines` `-`**`data science and software engineering`**. The goal of machine learning is to use data to create a predictive model that can be incorporated into a software application or service. To achieve this goal requires collaboration between data scientists who explore and prepare the data before using it to train a machine learning model, and software developers who integrate the models into applications where they're used to predict new data values (a process known as inferencing).
